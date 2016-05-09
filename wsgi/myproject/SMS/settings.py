@@ -90,18 +90,17 @@ WSGI_APPLICATION = 'SMS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-# DB_ENGINE = config.get('DataBase', 'ENGINE')
+DB_ENGINE = config.get('DataBase', 'ENGINE')
 # DB_HOST = config.get('DataBase', 'HOST')
-# DB_USER = config.get('DataBase', 'USER')
-# DB_PASSWORD = config.get('DataBase', 'PASSWORD')
-# DB_NAME = config.get('DataBase', 'NAME')
-
-DB_ENGINE = django.db.backends.mysql
-DB_HOST = os.environ['OPENSHIFT_MYSQL_DB_HOST']
-DB_PORT = os.environ['OPENSHIFT_MYSQL_DB_PORT']
-DB_USER = os.environ['OPENSHIFT_MYSQL_DB_USERNAME']
-DB_PASSWORD = os.environ['OPENSHIFT_MYSQL_DB_PASSWORD']
+DB_USER = config.get('DataBase', 'USER')
+DB_PASSWORD = config.get('DataBase', 'PASSWORD')
 DB_NAME = config.get('DataBase', 'NAME')
+
+# DB_ENGINE = django.db.backends.mysql
+DB_HOST = os.environ['OPENSHIFT_MYSQL_DB_HOST']
+# DB_PORT = os.environ['OPENSHIFT_MYSQL_DB_PORT']
+# DB_USER = os.environ['OPENSHIFT_MYSQL_DB_USERNAME']
+# DB_PASSWORD = os.environ['OPENSHIFT_MYSQL_DB_PASSWORD']
 
 DATABASES = {
     'default': {
